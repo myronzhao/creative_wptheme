@@ -15,11 +15,13 @@
 
 <header>
   <div class="container">
-    <h1>
-      <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
-        <?php bloginfo( 'name' ); ?>
-      </a>
-    </h1>
+    <?php $logoImage = get_field('logo_image'); ?>
+    
+    <a href="<?php the_permalink(); ?>">
+      <img src="<?php echo $logoImage['url'] ?>" alt="This is the logo image">
+    </a>
+
+    
 
     <?php wp_nav_menu( array(
       'container' => false,
